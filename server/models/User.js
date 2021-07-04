@@ -5,6 +5,14 @@ const userSchema = new Schema(
   {
     username: String,
     password: String,
+    partner: String,
+    partnerCode: String,
+    userType: {
+      type: [String],
+      enum: ['empowerEmployee', 'empowerAdmin', 'empowerPartner'],
+      required: true
+    }
+
   },
   {
     timestamps: {
