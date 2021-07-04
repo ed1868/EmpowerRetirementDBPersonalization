@@ -7,6 +7,7 @@ import AddCountry from './pages/AddCountry'
 import Secret from './pages/Secret'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import DemoForm from './pages/DemoForm'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <MainNavbar />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/createDemo" exact component={DemoForm} />
         <Route path="/countries" component={Countries} />
         <Route path="/add-country" component={AddCountry} />
         <Route path="/signup" component={Signup} />

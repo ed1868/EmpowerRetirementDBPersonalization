@@ -7,13 +7,29 @@ const Partner = require('../models/Partner');
 const { isLoggedIn } = require('../middlewares')
 
 
+//ROUTE TO GET CLIENT DEMO 
+
 router.get('/:id', isLoggedIn, (req, res, next) => {
   let userid = req.params.id;
 
   console.log('THIS IS THE PARTNER ID: ', userid);
 
+
+
 });
 
+
+// POST: CREATE A DEMO 
+router.post('/createDemo', req, res, next => {
+  console.log(req.body);
+  let { partnerName, typeOfDemo, details } = req.body;
+
+  console.log(`PARTNER NAME :  ${partnerName}`);
+  console.log(`TYPE OF DEMO :  ${typeOfDemo}`);
+  console.log(`DEMO DETAILS :  ${details}`);
+
+
+})
 // Bcrypt to encrypt passwords
 // const bcrypt = require('bcrypt')
 // const bcryptSalt = 10
