@@ -24,13 +24,12 @@ export default function AddDemo(props) {
     e.preventDefault()
     console.log(state.name, state.description)
     let data = {
-      name: state.name,
-      capitals: state.capitals,
-      area: state.area,
-      description: state.description,
+      partnerName: state.partnerName,
+      typeOfDemo: state.typeOfDemo,
+      details: state.details
     }
     api
-      .addCountry(data)
+      .createDemo(data)
       .then(result => {
         console.log('SUCCESS!')
         setState({
@@ -54,7 +53,7 @@ export default function AddDemo(props) {
         <input
           type="text"
           value={state.partnerName}
-          name="name"
+          name="partnerName"
           onChange={handleInputChange}
         />{' '}
         <br />
@@ -70,7 +69,7 @@ export default function AddDemo(props) {
         Details:{' '}
         <textarea
           value={state.details}
-          name="description"
+          name="details"
           cols="30"
           rows="10"
           onChange={handleInputChange}

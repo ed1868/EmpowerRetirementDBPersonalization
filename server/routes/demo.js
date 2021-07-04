@@ -20,7 +20,7 @@ router.get('/:id', isLoggedIn, (req, res, next) => {
 
 
 // POST: CREATE A DEMO 
-router.post('/createDemo', req, res, next => {
+router.post('/createDemo', (req, res, next) => {
   console.log(req.body);
   let { partnerName, typeOfDemo, details } = req.body;
 

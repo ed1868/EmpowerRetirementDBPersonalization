@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 console.log(process.env.NODE_ENV)
 
 const service = axios.create({
@@ -33,6 +34,19 @@ export default {
   // Be careful, the value is the one when the user logged in for the last time
   getLocalStorageUser() {
     return JSON.parse(localStorage.getItem('user'))
+  },
+
+
+  //This method create a demo for user 
+  createDemo(body) {
+    return service
+      .post('/demo/createDemo', body)
+      .then(result => {
+        console.log('THE RESULT FROM THE BACKEND : ', result);
+      })
+      .catch(err => {
+        if (err) { console.log('THE ERROR FROM BACKEND : ', err) }
+      })
   },
 
   // This method signs up and logs in the user
@@ -81,6 +95,7 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
+
 
   getSecret() {
     return service
