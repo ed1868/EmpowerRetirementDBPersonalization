@@ -39,7 +39,14 @@ body {
 // --------------------
 // Style for App component
 .App {
-  text-align: center;
+
+    
+    .bg_image--1 {
+        background-image: url(assets/images/wellsFargo.png) !important;
+        height: 200px;
+    }
+
+  
 
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -87,6 +94,16 @@ body {
   p {
     font-size: 1.2em;
   }
+}
+
+// --------------------
+// Style for DEMO HUB component
+.DemoHub {
+
+  .addButtonPlacement {
+    float: right;
+  }
+
 }
 
 // --------------------

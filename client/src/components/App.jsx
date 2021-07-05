@@ -8,8 +8,10 @@ import Secret from './pages/Secret'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import DemoForm from './pages/DemoForm'
+import DemoHub from './pages/DemoHub'
 
 export default function App() {
+
   return (
     <div className="App">
       <MainNavbar />
@@ -17,6 +19,7 @@ export default function App() {
         <Route path="/" exact component={Home} />
         <Route path="/createDemo" exact component={DemoForm} />
         <Route path="/countries" component={Countries} />
+        <Route path="/demo" component={DemoHub} />
         <Route path="/add-country" component={AddCountry} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />

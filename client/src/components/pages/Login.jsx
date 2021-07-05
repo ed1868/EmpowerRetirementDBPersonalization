@@ -3,6 +3,7 @@ import api from '../../api'
 import { useForm } from '../../hooks'
 
 export default function Login(props) {
+
   const { formValues, getInputProps } = useForm({
     username: '',
     password: '',
@@ -13,8 +14,9 @@ export default function Login(props) {
     api
       .login(formValues.username, formValues.password)
       .then(result => {
-        console.log('SUCCESS!')
-        props.history.push('/') // Redirect to the home page
+        console.log('SUCCESS!', result)
+        let partnerCode = result.partnerCode[0];
+        props.history.push(`/demo/${partnerCode}`) // Redirect to the DEMO HUB page
       })
       .catch(err => setMessage(err.toString()))
   }
