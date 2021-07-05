@@ -68,7 +68,7 @@ router.get('/addUsers', (req, res, next) => {
     marketSegment: "Core",
     title: "Consumer",
     role: 'DemoUser',
-    partnerCode: "met",
+    partnerCode: "wellsFargo",
     permissions: 'DemoUserPermissions',
     userType: 'partnerClient',
   }
