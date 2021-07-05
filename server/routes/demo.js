@@ -28,6 +28,8 @@ router.post('/createDemo', (req, res, next) => {
   console.log(`TYPE OF DEMO :  ${typeOfDemo}`);
   console.log(`DEMO DETAILS :  ${details}`);
 
+  // TESTING DEMO
+
 
 })
 // Bcrypt to encrypt passwords

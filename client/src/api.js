@@ -36,7 +36,18 @@ export default {
     return JSON.parse(localStorage.getItem('user'))
   },
 
+  // TO GET THE CURRENT USER 
 
+  getCurrentUser() {
+    console.log('ENTRO EN GET CURRENT USER');
+    if (localStorage.getItem('user') != null) {
+      let user = localStorage.getItem('user')
+      return user
+    } else {
+      return 'NO USER IS LOGGED IN';
+    }
+
+  },
   //This method create a demo for user 
   createDemo(body) {
     return service

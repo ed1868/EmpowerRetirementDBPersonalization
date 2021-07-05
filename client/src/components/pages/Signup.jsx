@@ -4,7 +4,6 @@ import api from '../../api'
 export default function Signup(props) {
   const [state, setState] = useState({
     username: '',
-    name: '',
     password: '',
     message: null,
   })
@@ -43,13 +42,7 @@ export default function Signup(props) {
           onChange={handleInputChange}
         />{' '}
         <br />
-        Name:{' '}
-        <input
-          type="text"
-          value={state.name}
-          name="name"
-          onChange={handleInputChange}
-        />{' '}
+
         <br />
         Password:{' '}
         <input
@@ -58,6 +51,9 @@ export default function Signup(props) {
           name="password"
           onChange={handleInputChange}
         />{' '}
+        <br />
+        <br />
+        <br />
         <br />
         <button onClick={e => handleClick(e)}>Signup</button>
       </form>
