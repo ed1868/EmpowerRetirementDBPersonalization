@@ -17,7 +17,8 @@ export default function DemoHub() {
 
   return (
     <div className="DemoHub">
-      <h2 className="mt-5">DEMO HUB</h2>
+
+      <h1 className="mt-5 text-center">DEMO HUB</h1>
 
       <div className="section">
         <div className="container">

@@ -48,6 +48,22 @@ export default {
     }
 
   },
+
+  // TO GET USER POOL FOR DESIRED USER BASE
+  getCompanyUsers(partnerCode) {
+    console.log(`FETCHING ALL THE ${partnerCode} USERS FROM DB`);
+
+    return service.get(`/demo/search/${partnerCode}`)
+      .then(users => {
+        console.log('THE USERS FROM THE BACKEND : ', users.data.users);
+
+        return users.data.users
+      })
+      .catch(err => {
+        if (err) { console.log('THE ERROR FROM BACKEND : ', err) }
+      })
+  },
+
   //This method create a demo for user 
   createDemo(body) {
     return service

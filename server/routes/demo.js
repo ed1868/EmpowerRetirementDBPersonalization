@@ -18,6 +18,33 @@ router.get('/:id', isLoggedIn, (req, res, next) => {
 
 });
 
+// FETCH USER DATA FROM A CERTAIN USER POOL
+
+router.get('/search/:id', isLoggedIn, (req, res, next) => {
+  console.log('THIS IS THE PARTNER ID TO FETCH : ', req.params.id)
+
+  let partnerCode = req.params.id;
+  let allUsers = [];
+
+  User.find({ partnerCode })
+    .then(userDoc => {
+      if (userDoc !== null) {
+        allUsers.push(userDoc)
+        return
+      }
+
+    })
+    .then(users => {
+      // RETURN ALL THE USERS
+      res.status(200).json({ users: allUsers });
+      return
+    })
+    .catch(err => next(err))
+
+
+
+})
+
 
 // POST: CREATE A DEMO 
 router.post('/createDemo', (req, res, next) => {
