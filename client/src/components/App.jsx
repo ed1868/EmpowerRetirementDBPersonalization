@@ -17,7 +17,8 @@ export default function App() {
       <MainNavbar />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/createDemo" exact component={DemoForm} />
+        {/* <Route path="/createDemo" exact component={DemoForm} /> */}
+        <Route path="/demo/createDemo" component={DemoForm} />
         <Route path="/countries" component={Countries} />
         <Route path="/demo" component={DemoHub} />
         <Route path="/add-country" component={AddCountry} />

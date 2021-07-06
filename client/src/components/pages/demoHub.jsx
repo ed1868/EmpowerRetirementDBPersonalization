@@ -1,15 +1,18 @@
 import React from 'react'
 import api from '../../api'
-
+import { Link, NavLink } from 'react-router-dom'
 export default function DemoHub() {
   // const [countries, setCountries] = useState([])
   // useEffect(() => {
-  //   api
-  //     .getCountries()
-  //     .then(countries => {
-  //       setCountries(countries)
-  //     })
-  //     .catch(err => console.log(err))
+
+  let currentUser = api.getLocalStorageUser();
+  // let
+  // api
+  //   .getCountries()
+  //   .then(countries => {
+  //     setCountries(countries)
+  //   })
+  //   .catch(err => console.log(err))
   // }, [])
 
   return (
@@ -19,38 +22,53 @@ export default function DemoHub() {
       <div className="section">
         <div className="container">
           <div className="addButton mt-5">
-            <a href="#" class="addButtonPlacement btn btn-danger">Add Demo</a>
+            {/* {
+              api.isLoggedIn() && (
+                <Link to={`/demo/createDemo`}>
+                  Demos
+                </Link>
+              )
+            } */}
+            <a href="/demo/createDemo" class="addButtonPlacement btn btn-danger">Add Demo</a>
           </div>
           <br></br>
           <br></br>
           <table className="table mt-5">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Demo Name</th>
+                <th scope="col">Created By</th>
+                <th scope="col">Assigned To</th>
+                <th scope="col">Created On</th>
+                <th scope="col">Expires On</th>
+                <th scope="col">Sponsor</th>
+                <th scope="col">Documents</th>
+                <th scope="col">Site Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">AdminTest</th>
+                <td>Empower Admin</td>
+                <td>Metlife Client</td>
+                <td>07/05/2021</td>
+                <td>07/05/2022</td>
+                <td>Met Life</td>
+                <td></td>
+                <td></td>
               </tr>
-              <tr>
+              {/* <tr>
                 <th scope="row">2</th>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
-              </tr>
-              <tr>
+              </tr> */}
+              {/* <tr>
                 <th scope="row">3</th>
                 <td>Larry</td>
                 <td>the Bird</td>
                 <td>@twitter</td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

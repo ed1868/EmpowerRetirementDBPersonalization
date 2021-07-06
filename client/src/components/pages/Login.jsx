@@ -16,7 +16,7 @@ export default function Login(props) {
       .then(result => {
         console.log('SUCCESS!', result)
         let partnerCode = result.partnerCode[0];
-        props.history.push(`/demo/${partnerCode}`) // Redirect to the DEMO HUB page
+        props.history.push(`/demo`) // Redirect to the DEMO HUB page
       })
       .catch(err => setMessage(err.toString()))
   }
